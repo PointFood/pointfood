@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import pe.edu.upc.clientservice.model.Card;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -53,4 +54,6 @@ public class Client implements Serializable {
     @Column(name = "password", length = 8, nullable = false)
     private String password;
 
+    @Transient
+    private Card card;
 }
