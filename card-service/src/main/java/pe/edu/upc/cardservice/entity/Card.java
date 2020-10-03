@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Data
 @Entity
@@ -14,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Builder
 @Table(name = "cards")
-public class Card {
+public class Card implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
